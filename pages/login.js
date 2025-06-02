@@ -1,15 +1,17 @@
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../schema/login";
 import getInputs from "../constants/input";
-import icon from "../public/Union.png";
+import Image from "next/image";
+import icon from "../public/images/Union.png";
 import styles from "../styles/signUp&Login.module.css";
 import { login } from "../services/config";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 function Login() {
- const router = useRouter()
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -56,7 +58,7 @@ function Login() {
         <h1 className={styles.h1}>بوت کمپ بوتواستارت</h1>
         <div className={styles.container}>
           <div className={styles.icon}>
-            <img src={icon} alt="" />
+            <Image src={icon} alt="" />
           </div>
           <h3 className={styles.h3}> فرم ورود</h3>
           {inputs.map((input, index) => (
@@ -73,8 +75,7 @@ function Login() {
 
           <button className={styles.button}> ورود</button>
           <span className={styles.span}>
-            ایجاد حساب کاربری!
-            {/* <NavLink to="/">ایجاد حساب کاربری! </NavLink> */}
+            <Link href="/">ایجاد حساب کاربری! </Link>
           </span>
         </div>
       </form>

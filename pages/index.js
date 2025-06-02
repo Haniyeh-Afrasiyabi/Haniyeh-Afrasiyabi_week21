@@ -1,9 +1,10 @@
-
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "../schema/signUp";
 import getInputs from "../constants/input";
-import icon from "../public/Union.png";
+import Image from "next/image";
+import icon from "../public/images/Union.png";
 import styles from "../styles/signUp&Login.module.css";
 import { signUp } from "../services/config";
 import { toast } from "react-toastify";
@@ -35,8 +36,7 @@ function SignUp() {
 
       toast.success("ثبت‌نام با موفقیت انجام شد!");
 
-   
-      router.push("/login")
+      router.push("/login");
     } catch (error) {
       const status = error.response?.status;
       console.log("خطای کامل:", error.response);
@@ -57,7 +57,7 @@ function SignUp() {
         <h1 className={styles.h1}>بوت کمپ بوتواستارت</h1>
         <div className={styles.container}>
           <div className={styles.icon}>
-            <img src={icon} alt="" />
+            <Image src={icon} alt="" />
           </div>
           <h3 className={styles.h3}>فرم ثبت نام</h3>
           {inputs.map((input, index) => (
@@ -74,8 +74,8 @@ function SignUp() {
 
           <button className={styles.button}>ثبت نام</button>
           <span className={styles.span}>
-            حساب
-            {/* <NavLink to="/login">حساب کاربری دارید؟</NavLink> */}
+           
+            <Link href="/login">حساب کاربری دارید؟</Link>
           </span>
         </div>
       </form>
