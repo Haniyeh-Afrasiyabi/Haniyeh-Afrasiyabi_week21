@@ -5,7 +5,7 @@ import { userSchema } from "../schema/signUp";
 import getInputs from "../constants/input";
 import Image from "next/image";
 import icon from "../public/images/Union.png";
-import styles from "../styles/signUp&Login.module.css";
+import styles from "../styles/SignUp&Login.module.css";
 import { signUp } from "../services/config";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
@@ -68,13 +68,12 @@ function SignUp() {
                 placeholder={input.placeholder}
                 {...input.register}
               />
-              {errors[input.name] && <span>{errors[input.name]?.message}</span>}
+              {errors[input.name] && <span className={styles.span}>{errors[input.name]?.message}</span>}
             </div>
           ))}
 
           <button className={styles.button}>ثبت نام</button>
           <span className={styles.span}>
-           
             <Link href="/login">حساب کاربری دارید؟</Link>
           </span>
         </div>

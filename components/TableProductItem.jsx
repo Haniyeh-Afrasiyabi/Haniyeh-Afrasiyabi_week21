@@ -4,6 +4,7 @@ import edit_icon from "../public/images/edit_trash_icon/edit.png";
 import trash_icon from "../public/images/edit_trash_icon/trash.png";
 import { formatPriceText } from "../format/format";
 import styles from "../styles/TableProductItem.module.css";
+import Image from "next/image";
 
 function TableProductItem({ product }) {
   const { dispatch } = useContext(ProductsContext);
@@ -23,7 +24,7 @@ function TableProductItem({ product }) {
             dispatch({ type: "ShowEditProductModal", payload: product })
           }
         >
-          <img src={edit_icon} alt="ویرایش" />
+          <Image src={edit_icon} alt="ویرایش" />
         </button>
         <button
           className={styles.button}
@@ -31,7 +32,7 @@ function TableProductItem({ product }) {
             dispatch({ type: "ShowDeleteSingleModal", payload: product.id })
           }
         >
-          <img src={trash_icon} alt="" />
+          <Image src={trash_icon} alt="" />
         </button>
       </td>
     </tr>

@@ -34,6 +34,7 @@ function ModalEditProduct() {
   if (!state.modalEditProduct?.show) return null;
 
   const onSubmit = async (data) => {
+    console.log("Form submitted with data:", data);
     const payload = {
       name: data.nameProduct.toLowerCase(),
       price: data.price,

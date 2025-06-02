@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3001"; // آدرس اصلی API
+const API_BASE_URL = "http://localhost:3000"; // آدرس اصلی API
 
 export const signUp = async (data) => {
   const response = await axios.post(`${API_BASE_URL}/auth/register`, data);

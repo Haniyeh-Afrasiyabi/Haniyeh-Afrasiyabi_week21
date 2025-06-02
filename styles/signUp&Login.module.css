@@ -1,17 +1,10 @@
-/* * {
-  overflow-x: hidden;
-} */
-
 .formContainer {
   display: flex;
   flex-direction: column;
   margin: auto;
   align-items: center;
   overflow-y: auto;
-
   overflow-x: hidden;
-
-
 }
 
 .h1 {

@@ -5,7 +5,7 @@ import { loginSchema } from "../schema/login";
 import getInputs from "../constants/input";
 import Image from "next/image";
 import icon from "../public/images/Union.png";
-import styles from "../styles/signUp&Login.module.css";
+import styles from "../styles/SignUp&Login.module.css";
 import { login } from "../services/config";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
@@ -69,7 +69,7 @@ function Login() {
                 placeholder={input.placeholder}
                 {...input.register}
               />
-              {errors[input.name] && <span>{errors[input.name]?.message}</span>}
+              {errors[input.name] && <span className={styles.span}>{errors[input.name]?.message}</span>}
             </div>
           ))}
 

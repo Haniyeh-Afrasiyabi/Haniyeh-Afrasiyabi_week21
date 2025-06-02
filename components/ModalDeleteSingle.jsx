@@ -4,6 +4,7 @@ import styles from "../styles/ModalDeleteSingle.module.css";
 import closeIcon from "../public/images/close_icon/Close.png";
 import { deleteProduct } from "../services/config";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 function ModalDeleteSingle() {
   const { state, dispatch } = useContext(ProductsContext);
@@ -26,8 +27,8 @@ function ModalDeleteSingle() {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <div>
-          <img src={closeIcon} alt="" />
+        <div className={styles.deleteIcon}>
+          <Image src={closeIcon} alt="" />
         </div>
         <p>آیا از حذف این محصول مطمئنید؟</p>
         <div className={styles.buttons}>

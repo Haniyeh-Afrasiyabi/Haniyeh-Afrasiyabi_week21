@@ -42,7 +42,7 @@ function ModalAddProduct() {
       const result = await addProduct(payload);
       dispatch({ type: "AddProduct", payload: result });
       dispatch({ type: "CloseAddProductModal" });
-      toast.success("محصول با موفقیت ایجاد شد ✅");
+      toast.success("محصول با موفقیت اضافه شد ✅");
     } catch (error) {
       toast.error("خطا در ایجاد محصول ❌");
       console.log(error);
