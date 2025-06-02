@@ -3,7 +3,7 @@ import { getAllProducts } from "../services/config";
 import HeaderDashboard from "../components/HeaderDashboard";
 import MainDashboard from "../components/MainDashboard";
 // import ModalDeleteSingle from "./ModalDeleteSingle";
-// import ModalAddProduct from "./ModalAddProduct";
+import ModalAddProduct from "../components/ModalAddProduct";
 // import ModalEditProduct from "./ModalEditProduct";
 import styles from "../styles/Dashboard.module.css";
 
