@@ -2,7 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import { getAllProducts } from "../services/config";
 import HeaderDashboard from "../components/HeaderDashboard";
 import MainDashboard from "../components/MainDashboard";
-// import ModalDeleteSingle from "./ModalDeleteSingle";
+import ModalDeleteSingle from "../components/ModalDeleteSingle";
 import ModalAddProduct from "../components/ModalAddProduct";
 import ModalEditProduct from "../components/ModalEditProduct";
 import styles from "../styles/Dashboard.module.css";
