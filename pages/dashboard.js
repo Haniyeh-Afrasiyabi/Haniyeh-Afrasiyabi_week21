@@ -4,7 +4,7 @@ import HeaderDashboard from "../components/HeaderDashboard";
 import MainDashboard from "../components/MainDashboard";
 // import ModalDeleteSingle from "./ModalDeleteSingle";
 import ModalAddProduct from "../components/ModalAddProduct";
-// import ModalEditProduct from "./ModalEditProduct";
+import ModalEditProduct from "../components/ModalEditProduct";
 import styles from "../styles/Dashboard.module.css";
 
 export const ProductsContext = createContext();
