@@ -1,27 +1,25 @@
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { userSchema } from "../schema/signUp";
+import { loginSchema } from "../schema/login";
 import getInputs from "../constants/input";
 import icon from "../public/Union.png";
 import styles from "../styles/signUp&Login.module.css";
-import { signUp } from "../services/config";
+import { login } from "../services/config";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
-function SignUp() {
-  const router = useRouter();
-
+function Login() {
+ const router = useRouter()
   const {
     register,
     handleSubmit,
 
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(userSchema),
+    resolver: yupResolver(loginSchema),
   });
 
-  const inputs = getInputs(register);
+  const inputs = getInputs(register, "login");
 
   const onSubmit = async (data) => {
     const payload = {
@@ -31,12 +29,13 @@ function SignUp() {
     console.log(payload);
 
     try {
-      await signUp(payload);
+      const result = await login(payload);
 
       toast.success("ثبت‌نام با موفقیت انجام شد!");
 
-   
-      router.push("/login")
+      localStorage.setItem("token", result.token);
+      localStorage.setItem("username", payload.username);
+      router.push("/dashboard");
     } catch (error) {
       const status = error.response?.status;
       console.log("خطای کامل:", error.response);
@@ -59,7 +58,7 @@ function SignUp() {
           <div className={styles.icon}>
             <img src={icon} alt="" />
           </div>
-          <h3 className={styles.h3}>فرم ثبت نام</h3>
+          <h3 className={styles.h3}> فرم ورود</h3>
           {inputs.map((input, index) => (
             <div key={index} className={styles.container_input}>
               <input
@@ -72,14 +71,14 @@ function SignUp() {
             </div>
           ))}
 
-          <button className={styles.button}>ثبت نام</button>
+          <button className={styles.button}> ورود</button>
           <span className={styles.span}>
-            حساب
-            {/* <NavLink to="/login">حساب کاربری دارید؟</NavLink> */}
+            ایجاد حساب کاربری!
+            {/* <NavLink to="/">ایجاد حساب کاربری! </NavLink> */}
           </span>
         </div>
       </form>
     </div>
   );
 }
-export default SignUp;
+export default Login;
